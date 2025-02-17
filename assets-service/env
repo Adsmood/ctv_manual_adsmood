@@ -1,0 +1,6 @@
+# Backblaze B2 Credentials
+B2_APPLICATION_KEY_ID=005ffd4a1ff302a000000002
+B2_APPLICATION_KEY=K0057A6SzCLovuE8SUjN36SIGAARdXc
+B2_BUCKET_ID=ef1f2bd7af10ef9350021a
+# URL público base de tu bucket
+B2_PUBLIC_URL=https://f005.backblazeb2.com/file/CTVAds/

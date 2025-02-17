@@ -1,0 +1,31 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.toolbar {
+  width: 100%;
+  padding: 10px;
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+}
+
+.canvas-container {
+  flex: 1;
+  position: relative;
+  margin: 20px;
+  border: 1px solid #ccc;
+  /* Mantiene la relación 16:9 */
+  width: 80%;
+  height: 0;
+  padding-bottom: 56.25%;
+  background-color: #fff;
+}
+
+.properties-panel {
+  width: 250px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ccc;
+}
