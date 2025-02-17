@@ -1,0 +1,46 @@
+services:
+  - name: ctv-frontend
+    type: web
+    env: static
+    buildCommand: cd frontend-cts-ad-editor && npm install && npm run build
+    staticPublishPath: frontend-cts-ad-editor/build
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - name: ctv-backend
+    type: web
+    env: node
+    buildCommand: cd backend-vast-api && npm install && npm run build
+    startCommand: cd backend-vast-api && npm run start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ctv-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
+
+  - name: ctv-assets
+    type: web
+    env: node
+    buildCommand: cd assets-service && npm install
+    startCommand: cd assets-service && npm start
+    envVars:
+      - key: B2_APPLICATION_KEY_ID
+        value: 005ffd4a1ff302a000000002
+      - key: B2_APPLICATION_KEY
+        sync: false
+      - key: B2_BUCKET_ID
+        value: ef1f2bd7af10ef9350021a
+      - key: B2_BUCKET_NAME
+        value: CTVAds
+      - key: B2_PUBLIC_URL
+        value: https://f005.backblazeb2.com/file/CTVAds/
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: ctv-db
+    databaseName: ctv_vast
+    user: ctv_vast_user 
